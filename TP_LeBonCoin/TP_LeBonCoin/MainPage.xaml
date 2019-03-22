@@ -4,11 +4,19 @@
              xmlns:local="clr-namespace:TP_LeBonCoin"
              x:Class="TP_LeBonCoin.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+	<StackLayout>
+		<!-- Place new controls here -->
+		<TableView Intent="Settings">
+			<TableRoot>
+				<TableSection Title="Page de connexion">
+					<EntryCell x:Name="login" Placeholder="login" Completed="login_Completed"/>
+					<!--Champ pour entrer le login-->
+					<EntryCell x:Name="mdp" Placeholder="mdp" Completed="mdp_Completed"/>
+					<!--Champ pour entrer le mot de passe-->
+				</TableSection>
+			</TableRoot>
+		</TableView>
+		<Button Clicked="OnNextPageButtonClicked"/>
+	</StackLayout>
 
 </ContentPage>

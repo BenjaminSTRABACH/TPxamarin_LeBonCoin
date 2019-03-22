@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using TP_LeBonCoin.DAL;
 
 namespace TP_LeBonCoin
 {
@@ -12,6 +13,30 @@ namespace TP_LeBonCoin
         public MainPage()
         {
             InitializeComponent();
+
+            var DAL = Data.GetInstance();
+
+
+            this.login.Text = DAL.login;
+            this.mdp.Text = DAL.mdp;
+        }
+        async void OnNextPageButtonClicked(object sender, EventArgs e)
+        {
+            if (login.Text == "oui" && mdp.Text == "oui")
+            {
+                await Navigation.PushAsync(new Test());
+            }
+        }
+        private void login_Completed(Object sender, EventArgs e)
+        {
+            var DAL = Data.GetInstance();
+            DAL.login = login.Text;
+        }
+
+        private void mdp_Completed(Object sender, EventArgs e)
+        {
+            var DAL = Data.GetInstance();
+            DAL.mdp = mdp.Text;
         }
     }
 }
