@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TP_LeBonCoin.Inscription">
+    <ContentPage.Content>
+        <StackLayout>
+			<TableView Intent="Settings">
+				<TableRoot>
+					<TableSection Title="Inscription">
+						<EntryCell x:Name="login" Placeholder="Identifiant"/>
+						<!--Champ pour entrer le login-->
+						<EntryCell x:Name="mdp" Placeholder="Code PIN (6 Chiffres)" Keyboard="Numeric"/>
+						<!--Champ pour entrer le mot de passe-->
+						<EntryCell x:Name="mdpconfirm" Placeholder="Confirmer le Code PIN" Keyboard="Numeric"/>
+						<!--Champ pour entrer le mot de passe-->
+					</TableSection>
+				</TableRoot>
+			</TableView>
+			<Button Clicked="ButtonInscription" Text="Confirmer"/>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

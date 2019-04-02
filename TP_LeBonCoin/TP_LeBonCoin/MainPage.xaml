@@ -8,15 +8,16 @@
 		<!-- Place new controls here -->
 		<TableView Intent="Settings">
 			<TableRoot>
-				<TableSection Title="Page de connexion">
-					<EntryCell x:Name="login" Placeholder="login" Completed="login_Completed"/>
+				<TableSection Title="Connexion">
+					<EntryCell x:Name="login" Placeholder="Identifiant" Completed="login_Completed"/>
 					<!--Champ pour entrer le login-->
-					<EntryCell x:Name="mdp" Placeholder="mdp" Completed="mdp_Completed"/>
+					<EntryCell x:Name="mdp" Placeholder="Code PIN (6 Chiffres)" Completed="mdp_Completed" Keyboard="Numeric"/>
 					<!--Champ pour entrer le mot de passe-->
 				</TableSection>
 			</TableRoot>
 		</TableView>
-		<Button Clicked="OnNextPageButtonClicked"/>
+		<Button Clicked="ButtonConnexion" Text="Connexion"/>
+		<Button Clicked="ButtonInscription" Text="Inscription"/>
 	</StackLayout>
 
 </ContentPage>
