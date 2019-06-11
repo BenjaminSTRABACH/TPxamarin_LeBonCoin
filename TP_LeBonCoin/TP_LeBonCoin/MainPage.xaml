@@ -9,13 +9,14 @@
 		<TableView Intent="Settings">
 			<TableRoot>
 				<TableSection Title="Connexion">
-					<EntryCell x:Name="login" Placeholder="Identifiant" Completed="login_Completed"/>
 					<!--Champ pour entrer le login-->
-					<EntryCell x:Name="mdp" Placeholder="Code PIN (6 Chiffres)" Completed="mdp_Completed" Keyboard="Numeric"/>
+					<EntryCell x:Name="login" Placeholder="Identifiant" Completed="Login_Completed"/>
 					<!--Champ pour entrer le mot de passe-->
+					<EntryCell x:Name="mdp" Placeholder="Code PIN (6 Chiffres)" Completed="Mdp_Completed" Keyboard="Numeric"/>
 				</TableSection>
 			</TableRoot>
 		</TableView>
+		<Label Text="Login ou mot de passe incorrect" x:Name="wrongId" HorizontalTextAlignment="Center" TextColor="Red" IsVisible="False"/>
 		<Button Clicked="ButtonConnexion" Text="Connexion"/>
 		<Button Clicked="ButtonInscription" Text="Inscription"/>
 	</StackLayout>

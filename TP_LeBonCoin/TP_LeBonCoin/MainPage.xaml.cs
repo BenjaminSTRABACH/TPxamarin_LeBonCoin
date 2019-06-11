@@ -23,9 +23,12 @@ namespace TP_LeBonCoin
 
         async void ButtonConnexion(object sender, EventArgs e)
         {
-            if (login.Text == "oui" && mdp.Text == "oui")
+            if (login.Text == "oui" && mdp.Text == "123456")
             {
                 await Navigation.PushAsync(new Test());
+            } else
+            {
+                wrongId.IsVisible = true;
             }
         }
 
@@ -35,13 +38,13 @@ namespace TP_LeBonCoin
             
         }
 
-        private void login_Completed(Object sender, EventArgs e)
+        private void Login_Completed(Object sender, EventArgs e)
         {
             var DAL = Data.GetInstance();
             DAL.login = login.Text;
         }
 
-        private void mdp_Completed(Object sender, EventArgs e)
+        private void Mdp_Completed(Object sender, EventArgs e)
         {
             var DAL = Data.GetInstance();
             DAL.mdp = mdp.Text;
