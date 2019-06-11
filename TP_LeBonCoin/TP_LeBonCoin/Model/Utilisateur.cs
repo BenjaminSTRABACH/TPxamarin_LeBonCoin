@@ -1,34 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace TP_LeBonCoin.Model
 {
-    class Utilisateur
+    public class Utilisateur
     {
         /// <summary>
         /// ID de l'utilisateur
         /// </summary>
-        public int id { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
 
         /// <summary>
         /// Nom de famille de l'utilisateur
         /// </summary>
-        public string nom { get; set; }
+        public string Nom { get; set; }
 
         /// <summary>
         /// Prénom de famille de l'utilisateur
         /// </summary>
-        public string prenom { get; set; }
+        public string Prenom { get; set; }
 
         /// <summary>
         /// Identifiant de l'utilisateur pour la connexion
         /// </summary>
-        public string login { get; set; }
+        public string Login { get; set; }
 
         /// <summary>
         /// Mot de passe de l'utilisateur pour la connexion
         /// </summary>
-        public string mdp { get; set; }
+        public string Mdp { get; set; }
     }
 }

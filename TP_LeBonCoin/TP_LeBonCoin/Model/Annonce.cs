@@ -1,39 +1,41 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SQLite;
 
 namespace TP_LeBonCoin.Model
 {
-    class Annonce
+    public class Annonce
     {
         /// <summary>
         /// ID de l'annonce
         /// </summary>
-        public int id { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
 
         /// <summary>
         /// Titre de l'annonce
         /// </summary>
-        public string titre { get; set; }
+        public string Titre { get; set; }
 
         /// <summary>
         /// Description de l'annonce
         /// </summary>
-        public string desc { get; set; }
+        public string Desc { get; set; }
 
         /// <summary>
         /// Prix de l'annonce
         /// </summary>
-        public decimal prix { get; set; }
+        public decimal Prix { get; set; }
 
         /// <summary>
         /// Numéro de téléphone à contacter
         /// </summary>
-        public decimal tel { get; set; }
+        public decimal Tel { get; set; }
 
         /// <summary>
         /// Catégorie à laquelle appartient l'annonce
         /// </summary>
-        public decimal categorie { get; set; }
+        public decimal Categorie { get; set; }
     }
 }

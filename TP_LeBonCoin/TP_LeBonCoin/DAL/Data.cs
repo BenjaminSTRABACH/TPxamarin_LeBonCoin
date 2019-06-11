@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using System.Text;
 using TP_LeBonCoin.Model;
+using SQLite;
 
 namespace TP_LeBonCoin.DAL
 {
-    class Data
+    public class AppDatabase
     {
         private static Utilisateur _instance;
+
+        readonly SQLiteAsyncConnection database;
+
+        public AppDatabase(string dbPath)
+        {
+            database = new SQLiteAsyncConnection(dbPath);
+            database.CreateTableAsync<Annonce>().Wait();
+            database.CreateTableAsync<Utilisateur>().Wait();
+        }
 
         public static Utilisateur GetInstance()
         {
@@ -16,8 +26,8 @@ namespace TP_LeBonCoin.DAL
                 _instance = new Utilisateur()
                 {
 
-                    login = string.Empty,
-                    mdp = string.Empty,
+                    Login = string.Empty,
+                    Mdp = string.Empty,
 
                 };
             }

@@ -14,11 +14,11 @@ namespace TP_LeBonCoin
         {
             InitializeComponent();
 
-            var DAL = Data.GetInstance();
+            var DAL = AppDatabase.GetInstance();
 
 
-            this.login.Text = DAL.login;
-            this.mdp.Text = DAL.mdp;
+            this.login.Text = DAL.Login;
+            this.mdp.Text = DAL.Mdp;
         }
 
         async void ButtonConnexion(object sender, EventArgs e)
@@ -40,14 +40,14 @@ namespace TP_LeBonCoin
 
         private void Login_Completed(Object sender, EventArgs e)
         {
-            var DAL = Data.GetInstance();
-            DAL.login = login.Text;
+            var DAL = AppDatabase.GetInstance();
+            DAL.Login = login.Text;
         }
 
         private void Mdp_Completed(Object sender, EventArgs e)
         {
-            var DAL = Data.GetInstance();
-            DAL.mdp = mdp.Text;
+            var DAL = AppDatabase.GetInstance();
+            DAL.Mdp = mdp.Text;
         }
     }
 }
