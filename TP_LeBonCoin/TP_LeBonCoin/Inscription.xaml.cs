@@ -42,7 +42,7 @@ namespace TP_LeBonCoin
                 
             } else
             {
-                await DisplayAlert("Erreur", "Veuillez entrer un identifiant et un code PIN valide.", "Confirmer");
+                await DisplayAlert("Erreur", "Veuillez entrer un identifiant, un nom, un prénom et un code PIN valide.", "Confirmer");
             }
         }
     }
