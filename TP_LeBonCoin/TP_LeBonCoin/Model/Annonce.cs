@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using SQLite;
 
-namespace TP_LeBonCoin.Model
+namespace TP_LeBonCoin
 {
     public class Annonce
     {
@@ -11,7 +11,7 @@ namespace TP_LeBonCoin.Model
         /// ID de l'annonce
         /// </summary>
         [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
+        public int ID { get; set; }
 
         /// <summary>
         /// Titre de l'annonce

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Text;
-using TP_LeBonCoin.Model;
+//using TP_LeBonCoin.Model;
 using SQLite;
 
 namespace TP_LeBonCoin.DAL
@@ -30,7 +30,7 @@ namespace TP_LeBonCoin.DAL
 
         public Task<int> SaveAnnonce(Annonce annonce)
         {
-            if (annonce.Id != 0)
+            if (annonce.ID != 0)
             {
                 return database.UpdateAsync(annonce);
             }
@@ -42,7 +42,7 @@ namespace TP_LeBonCoin.DAL
 
         public Task<int> SaveUtilisateur(Utilisateur utilisateur)
         {
-            if (utilisateur.Id != 0)
+            if (utilisateur.ID != 0)
             {
                 return database.UpdateAsync(utilisateur);
             }
@@ -60,6 +60,20 @@ namespace TP_LeBonCoin.DAL
         public Task<int> DeleteUtilisateur(Utilisateur utilisateur)
         {
             return database.DeleteAsync(utilisateur);
+        }
+
+        public bool CheckLogin(string login, string mdp)
+        {
+            Task<List<Utilisateur>> result = database.QueryAsync<Utilisateur>("SELECT * FROM [Utilisateur] WHERE [Login] = " + login + " && [Mdp] = " + mdp);
+            Console.WriteLine("------------------------------------------");
+            Console.WriteLine(result);
+            Console.WriteLine("------------------------------------------");
+            if (result.Id == 1)
+            {
+
+            }
+
+            return true;
         }
     }
 }

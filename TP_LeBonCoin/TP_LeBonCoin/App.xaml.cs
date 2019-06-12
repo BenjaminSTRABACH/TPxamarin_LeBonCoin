@@ -24,7 +24,7 @@ namespace TP_LeBonCoin
             {
                 if (database == null)
                 {
-                    database = new AppDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "TodoSQLite.db3"));
+                    database = new AppDatabase(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "LeBonCoin.db3"));
                 }
                 return database;
             }

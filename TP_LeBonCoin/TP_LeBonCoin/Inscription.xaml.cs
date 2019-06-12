@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TP_LeBonCoin.DAL;
-using TP_LeBonCoin.Model;
+//using TP_LeBonCoin.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,7 +28,15 @@ namespace TP_LeBonCoin
                     if (mdp.Text == mdpconfirm.Text)
                     {
                         //Inscrire
-                        await App.Database.SaveUtilisateur(new Utilisateur());
+                        //var utilisateur = (Utilisateur)BindingContext;
+                        Utilisateur utilisateur = new Utilisateur
+                        {
+                            Login = this.login.Text,
+                            Nom = this.nom.Text,
+                            Prenom = this.prenom.Text,
+                            Mdp = this.mdp.Text
+                        };
+                        await App.Database.SaveUtilisateur(utilisateur);
 
                         await DisplayAlert("Inscription réussie", "Vous pouvez maintenant vous connecter à votre espace personnel.", "Confirmer");
                         await Navigation.PopAsync();

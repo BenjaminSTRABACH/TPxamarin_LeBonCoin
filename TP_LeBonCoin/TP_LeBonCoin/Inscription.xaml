@@ -10,9 +10,9 @@
 						<!--Champ pour entrer le login-->
 						<EntryCell x:Name="login" Placeholder="Identifiant"/>
                         <!--Champ pour entrer le nom-->
-                        <EntryCell x:Name="nom" Placeholder="Nom"/>
+						<EntryCell x:Name="nom" Placeholder="Nom"/>
                         <!--Champ pour entrer le prénom-->
-                        <EntryCell x:Name="prenom" Placeholder="Prénom"/>
+						<EntryCell x:Name="prenom" Placeholder="Prénom"/>
 						<!--Champ pour entrer le mot de passe-->
 						<EntryCell x:Name="mdp" Placeholder="Code PIN (6 Chiffres)" Keyboard="Numeric"/>
 						<!--Champ pour entrer le mot de passe-->
