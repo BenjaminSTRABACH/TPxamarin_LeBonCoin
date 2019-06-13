@@ -8,9 +8,9 @@
 			<TableView Intent="Settings">
 				<TableRoot x:Name="annonce">
 					<TableSection Title="{Binding Titre}">
-						<TextCell Text="{Binding Desc}" TextColor="Black"/>
-						<TextCell Text="{Binding Prix}" TextColor="Black"/>
-						<TextCell Text="{Binding Tel}" TextColor="Black"/>
+						<TextCell Text="{Binding Desc, StringFormat='Description : {0}'}" TextColor="Black"/>
+						<TextCell Text="{Binding Prix, StringFormat='Prix : {0} €'}" TextColor="Black"/>
+						<TextCell Text="{Binding Tel, StringFormat='Tel : {0}'}" TextColor="Black"/>
 					</TableSection>
 				</TableRoot>
 			</TableView>

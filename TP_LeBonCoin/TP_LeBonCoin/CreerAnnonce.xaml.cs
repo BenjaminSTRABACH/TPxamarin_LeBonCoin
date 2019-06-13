@@ -24,8 +24,8 @@ namespace TP_LeBonCoin
             {
                 Titre = this.titre.Text,
                 Desc = this.desc.Text,
-                Prix = decimal.Parse(this.prix.Text),
-                Tel = decimal.Parse(this.tel.Text),
+                Prix = float.Parse(this.prix.Text),
+                Tel = (this.tel.Text).ToString(),
                 IDCategorie = 1,
                 IDUtilisateur = int.Parse(Application.Current.Properties["session"] as String)
             };
