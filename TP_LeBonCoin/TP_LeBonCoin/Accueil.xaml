@@ -5,6 +5,12 @@
 			 Title="Accueil">
     <ContentPage.Content>
         <StackLayout>
+			
+			<StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="40">
+				<Image Source="add.png" HorizontalOptions="Start" VerticalOptions="Fill" Aspect="AspectFit" HeightRequest="24"/>
+				<Entry Placeholder="Recherche" HorizontalOptions="FillAndExpand"/>
+				<Image Source="search.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFill" HeightRequest="24"/>
+			</StackLayout>
 			<ListView x:Name="annonces" Margin="20">
 				<ListView.ItemTemplate>
 					<DataTemplate>
