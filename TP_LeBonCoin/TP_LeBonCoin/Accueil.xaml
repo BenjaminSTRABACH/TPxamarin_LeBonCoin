@@ -23,7 +23,7 @@
 					</Image.GestureRecognizers>
 				</Image>
 			</StackLayout>
-			<ListView x:Name="annonces" Margin="20">
+			<ListView x:Name="annonces" Margin="20" ItemSelected="OnAnnonceSelected">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>

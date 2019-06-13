@@ -109,6 +109,11 @@ namespace TP_LeBonCoin.DAL
             return database.Table<Annonce>().Where(i => i.IDUtilisateur == idUtilisateur).ToListAsync();
         }
 
+        public Task<Annonce> GetAnnonceById(int id)
+        {
+            return database.Table<Annonce>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+
         public Task<Utilisateur> GetUtilisateurByLogin(string login)
         {
             return database.Table<Utilisateur>().Where(i => i.Login == login).FirstOrDefaultAsync();

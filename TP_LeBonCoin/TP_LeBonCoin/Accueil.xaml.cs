@@ -40,6 +40,19 @@ namespace TP_LeBonCoin
             }
         }
 
+        async void OnAnnonceSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem != null)
+            {
+                var annonce = e.SelectedItem as Annonce;
+                //Application.Current.Properties["idAnnonce"] = annonce.ID.ToString();
+                await Navigation.PushAsync(new DetailAnnonce
+                {
+                    BindingContext = e.SelectedItem as Annonce
+                });
+            }
+        }
+
         async void ButtonCreerAnnonce(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new CreerAnnonce());
