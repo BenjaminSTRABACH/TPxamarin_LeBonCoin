@@ -10,26 +10,16 @@
 			<TableRoot>
 				<TableSection Title="Connexion">
 					<!--Champ pour entrer le login-->
-					<EntryCell x:Name="login" Placeholder="Identifiant" Completed="Login_Completed"/>
+					<EntryCell x:Name="login" Placeholder="Identifiant"/>
 					<!--Champ pour entrer le mot de passe-->
-					<EntryCell x:Name="mdp" Placeholder="Code PIN (6 Chiffres)" Completed="Mdp_Completed" Keyboard="Numeric"/>
+					<EntryCell x:Name="mdp" Placeholder="Code PIN (6 Chiffres)" Keyboard="Numeric"/>
 				</TableSection>
 			</TableRoot>
 		</TableView>
 		<Label Text="Login ou mot de passe incorrect" x:Name="wrongId" HorizontalTextAlignment="Center" TextColor="Red" IsVisible="False"/>
 		<Button Clicked="ButtonConnexion" Text="Connexion"/>
 		<Button Clicked="ButtonInscription" Text="Inscription"/>
-		<ListView x:Name="listView" Margin="20">
-			<ListView.ItemTemplate>
-				<DataTemplate>
-					<ViewCell>
-						<StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-							<Label Text="{Binding Login}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-						</StackLayout>
-					</ViewCell>
-				</DataTemplate>
-			</ListView.ItemTemplate>
-		</ListView>
+		<Button Clicked="ButtonBDD" Text="Voir BDD"/>
 	</StackLayout>
 
 </ContentPage>

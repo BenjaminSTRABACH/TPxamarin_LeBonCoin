@@ -16,12 +16,6 @@ namespace TP_LeBonCoin
             
         }
 
-        protected override async void OnAppearing()
-        {
-            base.OnAppearing();
-            listView.ItemsSource = await App.Database.SelectUtilisateurs();
-        }
-
         async void ButtonConnexion(object sender, EventArgs e)
         {
             var utilisateur = await App.Database.GetUtilisateurByLogin(this.login.Text);
@@ -42,18 +36,12 @@ namespace TP_LeBonCoin
 
         async void ButtonInscription(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Inscription());
-            
+            await Navigation.PushAsync(new Inscription());   
         }
 
-        private void Login_Completed(Object sender, EventArgs e)
+        async void ButtonBDD(object sender, EventArgs e)
         {
-            
-        }
-
-        private void Mdp_Completed(Object sender, EventArgs e)
-        {
-            
+            await Navigation.PushAsync(new BDD());
         }
     }
 }
