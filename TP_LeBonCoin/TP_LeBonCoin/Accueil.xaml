@@ -5,11 +5,23 @@
 			 Title="Accueil">
     <ContentPage.Content>
         <StackLayout>
-			
+
 			<StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand" HeightRequest="40">
-				<Image Source="add.png" HorizontalOptions="Start" VerticalOptions="Fill" Aspect="AspectFit" HeightRequest="24"/>
+				<Image Source="add.png" HorizontalOptions="Start" VerticalOptions="Fill" Aspect="AspectFit" HeightRequest="24">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer
+						Tapped="OnAddTapped"
+						NumberOfTapsRequired="1" />
+					</Image.GestureRecognizers>
+				</Image>
 				<Entry Placeholder="Recherche" HorizontalOptions="FillAndExpand"/>
-				<Image Source="search.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFill" HeightRequest="24"/>
+				<Image Source="search.png" HorizontalOptions="End" VerticalOptions="Center" Aspect="AspectFill" HeightRequest="24">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer
+						Tapped="OnSearchTapped"
+						NumberOfTapsRequired="1" />
+					</Image.GestureRecognizers>
+				</Image>
 			</StackLayout>
 			<ListView x:Name="annonces" Margin="20">
 				<ListView.ItemTemplate>

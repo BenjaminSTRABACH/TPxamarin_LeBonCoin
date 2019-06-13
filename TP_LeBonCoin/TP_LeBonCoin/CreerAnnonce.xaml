@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TP_LeBonCoin.CreerAnnonce">
+    <ContentPage.Content>
+        <StackLayout>
+			<TableView Intent="Settings">
+				<TableRoot>
+					<TableSection>
+						<!--Champ pour entrer le titre-->
+						<EntryCell x:Name="titre" Placeholder="Titre"/>
+						<!--Champ pour entrer la description-->
+						<EntryCell x:Name="desc" Placeholder="Description" Keyboard="Text"/>
+						<!--Champ pour entrer le prix-->
+						<EntryCell x:Name="prix" Placeholder="Prix" Keyboard="Numeric"/>
+						<!--Champ pour entrer le numéro de téléphone-->
+						<EntryCell x:Name="tel" Placeholder="Tel" Keyboard="Telephone"/>
+						<!--Champ pour entrer la catégorie-->
+						<EntryCell x:Name="cat" Placeholder="Catégorie"/>
+					</TableSection>
+				</TableRoot>
+			</TableView>
+			<Button Clicked="ButtonCreerAnnonce" Text="Créer l'annonce"/>
+		</StackLayout>
+    </ContentPage.Content>
+</ContentPage>

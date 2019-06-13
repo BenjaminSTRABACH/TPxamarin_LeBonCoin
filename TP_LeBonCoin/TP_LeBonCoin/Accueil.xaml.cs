@@ -22,5 +22,15 @@ namespace TP_LeBonCoin
             base.OnAppearing();
             annonces.ItemsSource = await App.Database.SelectAnnonces();
         }
+
+        async void OnAddTapped(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CreerAnnonce());
+        }
+
+        async void OnSearchTapped(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
