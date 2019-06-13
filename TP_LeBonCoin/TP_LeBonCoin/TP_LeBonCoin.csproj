@@ -19,6 +19,9 @@
     <Compile Update="BDD.xaml.cs">
       <DependentUpon>BDD.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Accueil.xaml.cs">
+      <DependentUpon>Accueil.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -28,7 +31,7 @@
     <EmbeddedResource Update="BDD.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Test.xaml">
+    <EmbeddedResource Update="Accueil.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

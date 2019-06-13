@@ -10,11 +10,17 @@ using Xamarin.Forms.Xaml;
 namespace TP_LeBonCoin
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Test : ContentPage
+	public partial class Accueil : ContentPage
 	{
-		public Test ()
+		public Accueil ()
 		{
 			InitializeComponent ();
 		}
-	}
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            annonces.ItemsSource = await App.Database.SelectAnnonces();
+        }
+    }
 }

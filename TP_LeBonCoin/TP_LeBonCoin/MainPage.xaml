@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TP_LeBonCoin"
-             x:Class="TP_LeBonCoin.MainPage">
-
+             x:Class="TP_LeBonCoin.MainPage"
+			 Title="Connexion">
 	<StackLayout>
 		<!-- Place new controls here -->
 		<TableView Intent="Settings">
 			<TableRoot>
-				<TableSection Title="Connexion">
+				<TableSection>
 					<!--Champ pour entrer le login-->
 					<EntryCell x:Name="login" Placeholder="Identifiant"/>
 					<!--Champ pour entrer le mot de passe-->

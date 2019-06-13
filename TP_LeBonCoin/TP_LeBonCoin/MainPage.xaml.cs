@@ -23,7 +23,7 @@ namespace TP_LeBonCoin
             {
                 if(utilisateur.Mdp == this.mdp.Text)
                 {
-                    await Navigation.PushAsync(new Test());
+                    await Navigation.PushAsync(new Accueil());
                 } else
                 {
                     wrongId.IsVisible = true;
