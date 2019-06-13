@@ -90,9 +90,17 @@ namespace TP_LeBonCoin.DAL
             return database.DeleteAsync(utilisateur);
         }
 
-        public Task<List<Annonce>> SelectAnnoncesByTitle(bool notMine)
+        public Task<List<Annonce>> SelectAnnoncesByTitre(bool notMine, string search)
         {
-            return database.Table<Annonce>().ToListAsync();
+            search = '%' + search + '%';
+            if (notMine == false)
+            {
+                return database.QueryAsync<Annonce>("SELECT * FROM [annonce] WHERE [Titre] LIKE ?", search);
+            } else
+            {
+                int idUtilisateur = int.Parse(Application.Current.Properties["session"] as String);
+                return database.QueryAsync<Annonce>("SELECT * FROM [annonce] WHERE [Titre] LIKE ? AND IDUtilisateur != ?", search, idUtilisateur);
+            }
         }
 
         public Task<List<Annonce>> SelectAnnoncesByIdUtilisateur()

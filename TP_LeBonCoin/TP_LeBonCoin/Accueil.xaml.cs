@@ -30,7 +30,14 @@ namespace TP_LeBonCoin
 
         async void OnSearchTapped(object sender, EventArgs e)
         {
-            
+            string search = this.searchBar.Text;
+            if (search == "")
+            {
+                annonces.ItemsSource = await App.Database.SelectAnnonces(true);
+            } else
+            {
+                annonces.ItemsSource = await App.Database.SelectAnnoncesByTitre(true, search);
+            }
         }
 
         async void ButtonCreerAnnonce(object sender, EventArgs e)
