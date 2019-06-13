@@ -18,12 +18,12 @@ namespace TP_LeBonCoin.DAL
             database.CreateTableAsync<Utilisateur>().Wait();
         }
 
-        public Task<List<Annonce>> GetAnnonce()
+        public Task<List<Annonce>> SelectAnnonces()
         {
             return database.Table<Annonce>().ToListAsync();
         }
 
-        public Task<List<Utilisateur>> GetUtilisateur()
+        public Task<List<Utilisateur>> SelectUtilisateurs()
         {
             return database.Table<Utilisateur>().ToListAsync();
         }
@@ -62,18 +62,9 @@ namespace TP_LeBonCoin.DAL
             return database.DeleteAsync(utilisateur);
         }
 
-        public bool CheckLogin(string login, string mdp)
+        public Task<Utilisateur> GetUtilisateurByLogin(string login)
         {
-            Task<List<Utilisateur>> result = database.QueryAsync<Utilisateur>("SELECT * FROM [Utilisateur] WHERE [Login] = " + login + " && [Mdp] = " + mdp);
-            Console.WriteLine("------------------------------------------");
-            Console.WriteLine(result);
-            Console.WriteLine("------------------------------------------");
-            if (result.Id == 1)
-            {
-
-            }
-
-            return true;
+            return database.Table<Utilisateur>().Where(i => i.Login == login).FirstOrDefaultAsync();
         }
     }
 }

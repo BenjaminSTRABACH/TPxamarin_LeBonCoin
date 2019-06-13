@@ -13,13 +13,27 @@ namespace TP_LeBonCoin
         public MainPage()
         {
             InitializeComponent();
+            
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+            listView.ItemsSource = await App.Database.SelectUtilisateurs();
         }
 
         async void ButtonConnexion(object sender, EventArgs e)
         {
-            if (login.Text == "oui" && mdp.Text == "123456")
+            var utilisateur = await App.Database.GetUtilisateurByLogin(this.login.Text);
+            if (utilisateur != null)
             {
-                await Navigation.PushAsync(new Test());
+                if(utilisateur.Mdp == this.mdp.Text)
+                {
+                    await Navigation.PushAsync(new Test());
+                } else
+                {
+                    wrongId.IsVisible = true;
+                }
             } else
             {
                 wrongId.IsVisible = true;
