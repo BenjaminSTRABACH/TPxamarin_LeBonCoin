@@ -23,6 +23,7 @@ namespace TP_LeBonCoin
             {
                 if(utilisateur.Mdp == this.mdp.Text)
                 {
+                    Application.Current.Properties["session"] = utilisateur.ID.ToString();
                     await Navigation.PushAsync(new Accueil());
                 } else
                 {

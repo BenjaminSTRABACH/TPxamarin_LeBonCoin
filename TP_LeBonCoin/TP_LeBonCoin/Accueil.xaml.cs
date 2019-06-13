@@ -20,17 +20,23 @@ namespace TP_LeBonCoin
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            annonces.ItemsSource = await App.Database.SelectAnnonces();
+            annonces.ItemsSource = await App.Database.SelectAnnonces(true);
         }
 
-        async void OnAddTapped(object sender, EventArgs e)
+        async void OnUserTapped(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CreerAnnonce());
+            await Navigation.PushAsync(new MesAnnonces());
         }
 
         async void OnSearchTapped(object sender, EventArgs e)
         {
             
         }
+
+        async void ButtonCreerAnnonce(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CreerAnnonce());
+        }
+
     }
 }

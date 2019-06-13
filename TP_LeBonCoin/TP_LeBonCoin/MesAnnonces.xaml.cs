@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TP_LeBonCoin
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class BDD : ContentPage
+	public partial class MesAnnonces : ContentPage
 	{
-		public BDD ()
+		public MesAnnonces ()
 		{
 			InitializeComponent ();
 		}
@@ -20,8 +20,7 @@ namespace TP_LeBonCoin
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            listViewUtilisateurs.ItemsSource = await App.Database.SelectUtilisateurs();
-            listViewAnnonces.ItemsSource = await App.Database.SelectAnnonces(false);
+            annonces.ItemsSource = await App.Database.SelectAnnoncesByIdUtilisateur();
         }
     }
 }

@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Text;
-//using TP_LeBonCoin.Model;
 using SQLite;
+using Xamarin.Forms;
 
 namespace TP_LeBonCoin.DAL
 {
@@ -18,9 +17,21 @@ namespace TP_LeBonCoin.DAL
             database.CreateTableAsync<Utilisateur>().Wait();
         }
 
-        public Task<List<Annonce>> SelectAnnonces()
+        public Task<List<Annonce>> SelectAnnonces(bool notMine)
         {
-            return database.Table<Annonce>().ToListAsync();
+            if (notMine == false)
+            {
+                return database.Table<Annonce>().ToListAsync();
+            } else
+            {
+                int idUtilisateur = int.Parse(Application.Current.Properties["session"] as String);
+                return database.Table<Annonce>().Where(i => i.IDUtilisateur != idUtilisateur).ToListAsync();
+            }
+        }
+
+        public Task<List<Categorie>> SelectCategories()
+        {
+            return database.Table<Categorie>().ToListAsync();
         }
 
         public Task<List<Utilisateur>> SelectUtilisateurs()
@@ -37,6 +48,18 @@ namespace TP_LeBonCoin.DAL
             else
             {
                 return database.InsertAsync(annonce);
+            }
+        }
+
+        public Task<int> SaveCategorie(Categorie categorie)
+        {
+            if (categorie.ID != 0)
+            {
+                return database.UpdateAsync(categorie);
+            }
+            else
+            {
+                return database.InsertAsync(categorie);
             }
         }
 
@@ -57,9 +80,25 @@ namespace TP_LeBonCoin.DAL
             return database.DeleteAsync(annonce);
         }
 
+        public Task<int> DeleteCategorie(Categorie categorie)
+        {
+            return database.DeleteAsync(categorie);
+        }
+
         public Task<int> DeleteUtilisateur(Utilisateur utilisateur)
         {
             return database.DeleteAsync(utilisateur);
+        }
+
+        public Task<List<Annonce>> SelectAnnoncesByTitle(bool notMine)
+        {
+            return database.Table<Annonce>().ToListAsync();
+        }
+
+        public Task<List<Annonce>> SelectAnnoncesByIdUtilisateur()
+        {
+            int idUtilisateur = int.Parse(Application.Current.Properties["session"] as String);
+            return database.Table<Annonce>().Where(i => i.IDUtilisateur == idUtilisateur).ToListAsync();
         }
 
         public Task<Utilisateur> GetUtilisateurByLogin(string login)

@@ -36,7 +36,7 @@ namespace TP_LeBonCoin
         /// <summary>
         /// Catégorie à laquelle appartient l'annonce
         /// </summary>
-        public decimal Categorie { get; set; }
+        public int IDCategorie { get; set; }
 
         /// <summary>
         /// Utilisateur Ayant crée l'annonce
