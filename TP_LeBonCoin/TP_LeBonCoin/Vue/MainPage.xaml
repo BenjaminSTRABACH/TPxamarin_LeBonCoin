@@ -19,7 +19,7 @@
 		<Label Text="Login ou mot de passe incorrect" x:Name="wrongId" HorizontalTextAlignment="Center" TextColor="Red" IsVisible="False"/>
 		<Button Clicked="ButtonConnexion" Text="Connexion"/>
 		<Button Clicked="ButtonInscription" Text="Inscription"/>
-		<Button Clicked="ButtonBDD" Text="Voir BDD"/>
+		<Button Clicked="ButtonBDD" Text="Voir BDD" IsVisible="False"/>
 	</StackLayout>
 
 </ContentPage>

@@ -17,31 +17,31 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="BDD.xaml.cs">
+    <Compile Update="Vue\BDD.xaml.cs">
       <DependentUpon>BDD.xaml</DependentUpon>
     </Compile>
-    <Compile Update="Accueil.xaml.cs">
+    <Compile Update="Vue\Accueil.xaml.cs">
       <DependentUpon>Accueil.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="CreerAnnonce.xaml">
+    <EmbeddedResource Update="Vue\CreerAnnonce.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="DetailAnnonce.xaml">
+    <EmbeddedResource Update="Vue\DetailAnnonce.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Inscription.xaml">
+    <EmbeddedResource Update="Vue\Inscription.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BDD.xaml">
+    <EmbeddedResource Update="Vue\BDD.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Accueil.xaml">
+    <EmbeddedResource Update="Vue\Accueil.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MesAnnonces.xaml">
+    <EmbeddedResource Update="Vue\MesAnnonces.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
