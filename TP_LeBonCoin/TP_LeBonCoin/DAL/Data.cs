@@ -15,6 +15,7 @@ namespace TP_LeBonCoin.DAL
             database = new SQLiteAsyncConnection(dbPath);
             database.CreateTableAsync<Annonce>().Wait();
             database.CreateTableAsync<Utilisateur>().Wait();
+            database.CreateTableAsync<Categorie>().Wait();
         }
 
         public Task<List<Annonce>> SelectAnnonces(bool notMine)
@@ -114,9 +115,19 @@ namespace TP_LeBonCoin.DAL
             return database.Table<Annonce>().Where(i => i.ID == id).FirstOrDefaultAsync();
         }
 
+        public Task<Categorie> GetCategorieById(int id)
+        {
+            return database.Table<Categorie>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+
         public Task<Utilisateur> GetUtilisateurByLogin(string login)
         {
             return database.Table<Utilisateur>().Where(i => i.Login == login).FirstOrDefaultAsync();
+        }
+
+        public Task<Categorie> GetCategorieByTitre(string titre)
+        {
+            return database.Table<Categorie>().Where(i => i.Titre == titre).FirstOrDefaultAsync();
         }
     }
 }

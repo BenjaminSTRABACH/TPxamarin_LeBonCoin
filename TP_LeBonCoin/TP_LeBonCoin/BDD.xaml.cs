@@ -22,6 +22,7 @@ namespace TP_LeBonCoin
             base.OnAppearing();
             listViewUtilisateurs.ItemsSource = await App.Database.SelectUtilisateurs();
             listViewAnnonces.ItemsSource = await App.Database.SelectAnnonces(false);
+            listViewCategories.ItemsSource = await App.Database.SelectCategories();
         }
     }
 }

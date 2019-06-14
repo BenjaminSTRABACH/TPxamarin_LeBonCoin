@@ -48,7 +48,7 @@ namespace TP_LeBonCoin
             if (e.SelectedItem != null)
             {
                 var annonce = e.SelectedItem as Annonce;
-                //Application.Current.Properties["idAnnonce"] = annonce.ID.ToString();
+                Application.Current.Properties["idAnnonce"] = annonce.ID.ToString();
                 await Navigation.PushAsync(new DetailAnnonce
                 {
                     BindingContext = e.SelectedItem as Annonce

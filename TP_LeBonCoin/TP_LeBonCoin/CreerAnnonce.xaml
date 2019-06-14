@@ -4,22 +4,17 @@
              x:Class="TP_LeBonCoin.CreerAnnonce">
     <ContentPage.Content>
         <StackLayout>
-			<TableView Intent="Settings">
-				<TableRoot>
-					<TableSection>
-						<!--Champ pour entrer le titre-->
-						<EntryCell x:Name="titre" Placeholder="Titre"/>
-						<!--Champ pour entrer la description-->
-						<EntryCell x:Name="desc" Placeholder="Description" Keyboard="Text"/>
-						<!--Champ pour entrer le prix-->
-						<EntryCell x:Name="prix" Placeholder="Prix" Keyboard="Numeric"/>
-						<!--Champ pour entrer le numéro de téléphone-->
-						<EntryCell x:Name="tel" Placeholder="Tel" Keyboard="Telephone"/>
-						<!--Champ pour entrer la catégorie-->
-						<EntryCell x:Name="cat" Placeholder="Catégorie"/>
-					</TableSection>
-				</TableRoot>
-			</TableView>
+			
+			<!--Champ pour entrer le titre-->
+			<Entry x:Name="titre" Placeholder="Titre"/>
+			<!--Champ pour entrer la description-->
+			<Entry x:Name="desc" Placeholder="Description" Keyboard="Text"/>
+			<!--Champ pour entrer le prix-->
+			<Entry x:Name="prix" Placeholder="Prix" Keyboard="Numeric"/>
+			<!--Champ pour entrer le numéro de téléphone-->
+			<Entry x:Name="tel" Placeholder="Tel" Keyboard="Telephone"/>
+			<!--Champ pour entrer la catégorie-->
+			<Picker x:Name="cat" Title="Catégorie" ItemDisplayBinding="{Binding Titre}"/>
 			<Button Clicked="ButtonCreerAnnonce" Text="Créer l'annonce"/>
 		</StackLayout>
     </ContentPage.Content>

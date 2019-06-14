@@ -16,6 +16,33 @@ namespace TP_LeBonCoin
             
         }
 
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            string[] catTab =
+                {
+                "Console & Jeux Vidéo",
+                "Immobilier",
+                "Electroménager",
+                "Sport",
+                "Vehicule"
+            };
+
+            foreach (string titre in catTab)
+            {
+                var cat = await App.Database.GetCategorieByTitre(titre);
+                if (cat == null)
+                {
+                    cat = new Categorie {
+                        Titre = titre
+                    };
+                    await App.Database.SaveCategorie(cat);
+                }
+            }
+
+        }
+
         async void ButtonConnexion(object sender, EventArgs e)
         {
             var utilisateur = await App.Database.GetUtilisateurByLogin(this.login.Text);
