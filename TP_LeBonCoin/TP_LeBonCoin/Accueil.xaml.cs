@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
+using TP_LeBonCoin.DAL;
+
 namespace TP_LeBonCoin
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
@@ -15,8 +17,12 @@ namespace TP_LeBonCoin
 		public Accueil ()
 		{
 			InitializeComponent ();
-		}
-
+           
+        }
+        async void ButtonAnnonces(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new MesAnnonce());
+        }
         protected override async void OnAppearing()
         {
             base.OnAppearing();

@@ -19,7 +19,7 @@ namespace TP_LeBonCoin
         async void ButtonConnexion(object sender, EventArgs e)
         {
             var utilisateur = await App.Database.GetUtilisateurByLogin(this.login.Text);
-            if (utilisateur != null)
+            if (utilisateur.Login == this.login.Text)
             {
                 if(utilisateur.Mdp == this.mdp.Text)
                 {
