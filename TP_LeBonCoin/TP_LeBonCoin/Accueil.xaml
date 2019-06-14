@@ -3,19 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TP_LeBonCoin.Accueil"
 			 Title="Accueil">
+   
+    
     <ContentPage.Content>
         <StackLayout>
+            <Button Clicked="ButtonAnnonces" Text="Mes Annonces"/>
 			<ListView x:Name="annonces" Margin="20">
-				<ListView.ItemTemplate>
-					<DataTemplate>
-						<ViewCell>
-							<StackLayout Margin="20,0,0,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
-								<Label Text="{Binding Titre}" VerticalTextAlignment="Center" HorizontalOptions="StartAndExpand" />
-							</StackLayout>
-						</ViewCell>
-					</DataTemplate>
-				</ListView.ItemTemplate>
-			</ListView>
-		</StackLayout>
+				
+                <ListView.Header>
+                    <StackLayout >
+                        <Label Text="Les Annonces" HorizontalOptions="Center" />
+                    </StackLayout>
+                </ListView.Header>
+            </ListView>
+            
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

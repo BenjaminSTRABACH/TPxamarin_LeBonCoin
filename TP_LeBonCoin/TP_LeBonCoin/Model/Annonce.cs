@@ -26,16 +26,19 @@ namespace TP_LeBonCoin
         /// <summary>
         /// Prix de l'annonce
         /// </summary>
-        public decimal Prix { get; set; }
+        public string Prix { get; set; }
 
         /// <summary>
         /// Numéro de téléphone à contacter
         /// </summary>
-        public decimal Tel { get; set; }
+        public string Tel { get; set; }
 
         /// <summary>
         /// Catégorie à laquelle appartient l'annonce
         /// </summary>
-        public decimal Categorie { get; set; }
+        public string Categorie { get; set; }
+
+        
+
     }
 }
