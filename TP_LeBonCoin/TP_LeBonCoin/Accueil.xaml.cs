@@ -19,10 +19,7 @@ namespace TP_LeBonCoin
 			InitializeComponent ();
            
         }
-        async void ButtonAnnonces(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new MesAnnonce());
-        }
+
         protected override async void OnAppearing()
         {
             base.OnAppearing();
@@ -58,11 +55,5 @@ namespace TP_LeBonCoin
                 });
             }
         }
-
-        async void ButtonCreerAnnonce(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new CreerAnnonce());
-        }
-
     }
 }

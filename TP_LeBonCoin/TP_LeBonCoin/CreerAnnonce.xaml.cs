@@ -19,19 +19,25 @@ namespace TP_LeBonCoin
 
         async void ButtonCreerAnnonce(object sender, EventArgs e)
         {
-            //Ajouter une annonce
-            Annonce annonce = new Annonce
+            if (this.titre.Text != null && this.desc.Text != null && this.prix != null && this.tel != null && this.cat != null)
             {
-                Titre = this.titre.Text,
-                Desc = this.desc.Text,
-                Prix = float.Parse(this.prix.Text),
-                Tel = (this.tel.Text).ToString(),
-                IDCategorie = 1,
-                IDUtilisateur = int.Parse(Application.Current.Properties["session"] as String)
-            };
-            await App.Database.SaveAnnonce(annonce);
-            await DisplayAlert("Annonce créée", "Votre annonce à bien été ajoutée.", "Confirmer");
-            await Navigation.PopAsync();
+                Annonce annonce = new Annonce
+                {
+                    Titre = this.titre.Text,
+                    Desc = this.desc.Text,
+                    Prix = float.Parse(this.prix.Text),
+                    Tel = (this.tel.Text).ToString(),
+                    IDCategorie = 1,
+                    IDUtilisateur = int.Parse(Application.Current.Properties["session"] as String)
+                };
+                await App.Database.SaveAnnonce(annonce);
+                await DisplayAlert("Annonce créée", "Votre annonce à bien été ajoutée.", "Confirmer");
+                await Navigation.PopAsync();
+            } else
+            {
+                await DisplayAlert("Erreur", "Veuiller remplir tout les champs pour créer votre annonce.", "Confirmer");
+            }
+            
         }
 
     }

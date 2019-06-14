@@ -36,7 +36,6 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-			<Button Clicked="ButtonCreerAnnonce" Text="Nouvelle annonce"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
