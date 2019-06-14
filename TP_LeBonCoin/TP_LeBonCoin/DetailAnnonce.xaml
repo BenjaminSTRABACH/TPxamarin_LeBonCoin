@@ -10,7 +10,7 @@
 					<TableSection Title="{Binding Titre}">
 						<TextCell Text="{Binding Desc, StringFormat='Description : {0}'}" TextColor="Black"/>
 						<TextCell Text="{Binding Prix, StringFormat='Prix : {0} €'}" TextColor="Black"/>
-						<TextCell Text="{Binding Tel, StringFormat='Tel : {0}'}" TextColor="Black"/>
+						<TextCell x:Name="tel" Text="{Binding Tel, StringFormat='Tel : {0}'}" TextColor="Black" Tapped="CallNumber"/>
 					</TableSection>
 				</TableRoot>
 			</TableView>

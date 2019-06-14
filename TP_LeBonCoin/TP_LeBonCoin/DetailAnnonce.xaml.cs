@@ -1,9 +1,9 @@
-﻿using System;
+﻿using Plugin.Messaging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,12 +17,11 @@ namespace TP_LeBonCoin
 			InitializeComponent ();
 		}
 
-        protected override async void OnAppearing()
+        void CallNumber(object sender, EventArgs e)
         {
-            base.OnAppearing();
-            //int idAnnonce = int.Parse(Application.Current.Properties["idAnnonce"] as String);
-            //annonce.ItemsSource = App.Database.GetAnnonceById(idAnnonce);
-            
+            var call = CrossMessaging.Current.PhoneDialer;
+            string number = this.tel.Text;
+            call.MakePhoneCall(number);
         }
     }
 }
